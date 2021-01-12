@@ -51,6 +51,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  bool _flag = false;
 
   void _incrementCounter() {
     setState(() {
@@ -61,6 +62,10 @@ class _MyHomePageState extends State<MyHomePage> {
       // called again, and so nothing would appear to happen.
       _counter++;
     });
+
+    this._printSomething(parameter: true);
+    final variable = this._flag;
+    print('Also: $variable');
   }
 
   @override
@@ -113,5 +118,9 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
+  }
+
+  _printSomething({@required bool parameter}) {
+    print('Parameter: $parameter');
   }
 }
